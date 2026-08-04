@@ -286,6 +286,14 @@ p {
   align-items: center;
 }
 
+.hero-kicker {
+  margin: 0 0 0.5rem;
+  color: var(--sign-gold);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+}
+
 .hero-pot-stage {
   display: grid;
   justify-items: center;
