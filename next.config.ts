@@ -1,14 +1,14 @@
 import type { NextConfig } from "next";
 
 const repo = "wengji-banqiao-intel";
-const isGhPages = process.env.GITHUB_ACTIONS === "true";
+const basePath = process.env.BASE_PATH === "0" ? "" : process.env.BASE_PATH || `/${repo}`;
 
 const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
   trailingSlash: true,
-  basePath: isGhPages ? `/${repo}` : "",
-  assetPrefix: isGhPages ? `/${repo}/` : undefined,
+  basePath,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
 };
 
 export default nextConfig;
