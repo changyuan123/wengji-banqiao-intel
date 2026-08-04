@@ -3,7 +3,6 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { CompetitorRadar, ModuleGrid, MonthlyAlert } from "@/components/DashboardPanels";
 import { CogsPanel, GeoPanel, KpiStrip } from "@/components/InsightPanels";
 import { merchant } from "@/data/merchant";
-import { asset } from "@/lib/asset";
 
 export default function DashboardPage() {
   return (
@@ -14,10 +13,7 @@ export default function DashboardPage() {
       <SiteHeader variant="app" />
 
       <main className="dashboard">
-        <section
-          className="dash-hero"
-          style={{ backgroundImage: `url(${asset("/hero-hotpot.jpg")})` }}
-        >
+        <section className="dash-hero">
           <div>
             <p className="eyebrow">訂閱制營運情報 · 預覽</p>
             <h1>{merchant.fullName}</h1>

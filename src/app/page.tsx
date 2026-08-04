@@ -3,7 +3,6 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SubscribePanel } from "@/components/SubscribePanel";
 import { YuanyangMark } from "@/components/YuanyangMark";
 import { merchant, modules } from "@/data/merchant";
-import { asset } from "@/lib/asset";
 
 export default function HomePage() {
   return (
@@ -14,35 +13,41 @@ export default function HomePage() {
       <SiteHeader />
 
       <main>
-        <section className="hero">
-          <div
-            className="hero__photo"
-            style={{ backgroundImage: `url(${asset("/hero-hotpot.jpg")})` }}
-          />
-          <div className="hero__veil" />
-          <div className="hero__content">
-            <div className="hero-sign">
-              <YuanyangMark className="hero-sign__pot" />
-              <div>
-                <p className="hero-brand">{merchant.name}</p>
-                <h1>
-                  {merchant.branch}
-                  <span>每月營運情報</span>
-                </h1>
+        <section className="hero hero--storefront">
+          <div className="hero__store-bg" aria-hidden>
+            <div className="hero__lantern hero__lantern--l" />
+            <div className="hero__lantern hero__lantern--r" />
+            <div className="hero__steam-field">
+              <span />
+              <span />
+              <span />
+            </div>
+          </div>
+          <div className="hero__content hero__content--split">
+            <div className="hero-copy">
+              <p className="hero-kicker">篤行路三段 28 號專屬</p>
+              <p className="hero-brand">{merchant.name}</p>
+              <h1>
+                {merchant.branch}
+                <span>每月營運情報</span>
+              </h1>
+              <p className="hero-lede">
+                給門市的訂閱制儀表板：盯住低價個人鍋夾擊、補上退出外送後的缺口，並用菜單工程把淡季毛利留住。
+              </p>
+              <div className="cta-row">
+                <a className="btn btn-primary" href="#subscribe">
+                  每月 NT${merchant.monthlyPrice} 訂閱
+                </a>
+                <Link className="btn btn-ghost btn-ghost-on-red" href="/dashboard/">
+                  打開本月儀表板預覽
+                </Link>
               </div>
+              <p className="hero-address">{merchant.address}</p>
             </div>
-            <p className="hero-lede">
-              給篤行路三段 28 號店主的訂閱制儀表板：盯住低價個人鍋夾擊、補上退出外送後的缺口，並用菜單工程把淡季毛利留住。
-            </p>
-            <div className="cta-row">
-              <a className="btn btn-primary" href="#subscribe">
-                每月 NT${merchant.monthlyPrice} 訂閱
-              </a>
-              <Link className="btn btn-ghost" href="/dashboard/">
-                打開本月儀表板預覽
-              </Link>
+            <div className="hero-pot-stage" aria-hidden>
+              <YuanyangMark className="hero-pot-stage__mark" />
+              <p className="hero-pot-stage__caption">鴛鴦鍋 · 紅白雙湯</p>
             </div>
-            <p className="hero-address">{merchant.address}</p>
           </div>
         </section>
 
