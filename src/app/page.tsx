@@ -1,27 +1,36 @@
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SubscribePanel } from "@/components/SubscribePanel";
+import { YuanyangMark } from "@/components/YuanyangMark";
 import { merchant, modules } from "@/data/merchant";
+import { asset } from "@/lib/asset";
 
 export default function HomePage() {
   return (
     <div className="page">
+      <div className="signboard" aria-hidden>
+        <span>台式麻辣 · 湯頭可喝 · 免服務費 · 免費綠豆湯</span>
+      </div>
       <SiteHeader />
 
       <main>
         <section className="hero">
-          <div className="hero__atmosphere" aria-hidden>
-            <div className="steam steam-a" />
-            <div className="steam steam-b" />
-            <div className="steam steam-c" />
-            <div className="hero__grain" />
-          </div>
+          <div
+            className="hero__photo"
+            style={{ backgroundImage: `url(${asset("/hero-hotpot.jpg")})` }}
+          />
+          <div className="hero__veil" />
           <div className="hero__content">
-            <p className="hero-brand">{merchant.name}</p>
-            <h1>
-              {merchant.branch}
-              <span>每月營運情報</span>
-            </h1>
+            <div className="hero-sign">
+              <YuanyangMark className="hero-sign__pot" />
+              <div>
+                <p className="hero-brand">{merchant.name}</p>
+                <h1>
+                  {merchant.branch}
+                  <span>每月營運情報</span>
+                </h1>
+              </div>
+            </div>
             <p className="hero-lede">
               給篤行路三段 28 號店主的訂閱制儀表板：盯住低價個人鍋夾擊、補上退出外送後的缺口，並用菜單工程把淡季毛利留住。
             </p>
@@ -79,7 +88,7 @@ export default function HomePage() {
           </div>
           <div className="cta-row center">
             <Link className="btn btn-primary" href="/dashboard/">
-              查看 {monthlyLabel()} 儀表板
+              查看本月儀表板
             </Link>
           </div>
         </section>
@@ -95,8 +104,4 @@ export default function HomePage() {
       </footer>
     </div>
   );
-}
-
-function monthlyLabel() {
-  return "本月";
 }

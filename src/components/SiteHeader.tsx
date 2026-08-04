@@ -5,10 +5,12 @@ export function SiteHeader({ variant = "landing" }: { variant?: "landing" | "app
   return (
     <header className="site-header">
       <Link href="/" className="brand-lockup">
-        <span className="brand-mark" aria-hidden />
+        <span className="brand-seal" aria-hidden>
+          翁
+        </span>
         <span className="brand-text">
           <strong>{merchant.name}</strong>
-          <em>{merchant.branch}營運情報</em>
+          <em>{merchant.branch} · 營運情報</em>
         </span>
       </Link>
       <nav className="site-nav">

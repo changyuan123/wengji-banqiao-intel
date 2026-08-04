@@ -3,18 +3,27 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { CompetitorRadar, ModuleGrid, MonthlyAlert } from "@/components/DashboardPanels";
 import { CogsPanel, GeoPanel, KpiStrip } from "@/components/InsightPanels";
 import { merchant } from "@/data/merchant";
+import { asset } from "@/lib/asset";
 
 export default function DashboardPage() {
   return (
     <div className="page page-app">
+      <div className="signboard" aria-hidden>
+        <span>台式麻辣 · 湯頭可喝 · 免服務費 · 免費綠豆湯</span>
+      </div>
       <SiteHeader variant="app" />
 
       <main className="dashboard">
-        <section className="dash-hero">
+        <section
+          className="dash-hero"
+          style={{ backgroundImage: `url(${asset("/hero-hotpot.jpg")})` }}
+        >
           <div>
             <p className="eyebrow">訂閱制營運情報 · 預覽</p>
             <h1>{merchant.fullName}</h1>
-            <p className="dash-address">{merchant.address}</p>
+            <p className="dash-address" style={{ color: "rgba(255,250,243,0.78)" }}>
+              {merchant.address}
+            </p>
             <p className="dash-tags">
               <span>{merchant.area}</span>
               <span>{merchant.priceBand}</span>
