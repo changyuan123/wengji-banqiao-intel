@@ -2,27 +2,30 @@
 
 專為 **翁記麻辣鍋－板橋店**（新北市板橋區溪福里篤行路三段 28 號）打造的訂閱制營運情報原型。
 
+## 線上預覽
+
+- 落地頁：https://changyuan123.github.io/wengji-banqiao-intel/
+- 儀表板：https://changyuan123.github.io/wengji-banqiao-intel/dashboard/
+- 原始碼：https://github.com/changyuan123/wengji-banqiao-intel
+
 ## 目標
 
 讓門市管理人願意以每月約 **NT$99** 訂閱網頁服務：持續監控競品、自營外帶、菜單工程、淡季與在地搜尋，後續再疊加神秘客／人工情報與分潤。
 
-## 雲端開發
+## 雲端開發（建議）
 
-- Repo：本倉庫
-- 建議在 **GitHub Codespaces** 開發與建置，避免舊文書機本機負荷
-- 透過 GitHub Actions 部署至 **GitHub Pages**（push `main` 自動部署）
-
-## 本機／Codespace 指令
+本機僅作輕量檔案同步；`npm install` / `npm run build` 請在 **GitHub Codespaces** 執行。
 
 ```bash
+# Codespace 內
 npm install
-npm run dev
-npm run build
+BASE_PATH=0 npm run dev          # 本機路徑預覽（無 GitHub Pages 前綴）
+npm run build                    # 產出 out/（含 /wengji-banqiao-intel basePath）
 ```
 
-靜態輸出目錄：`out/`
+部署：將 `out/` 推到 `gh-pages` 分支（目前以此方式上線）。
 
 ## 路由
 
 - `/` 訂閱轉換落地頁
-- `/dashboard` 本月情報儀表板預覽
+- `/dashboard/` 本月情報儀表板預覽
