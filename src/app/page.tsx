@@ -23,7 +23,7 @@ export default function HomePage() {
               <span />
             </div>
           </div>
-          <div className="hero__content hero__content--split">
+          <div className="hero__content hero__content--stack">
             <div className="hero-copy">
               <p className="hero-kicker">篤行路三段 28 號專屬</p>
               <p className="hero-brand">{merchant.name}</p>
