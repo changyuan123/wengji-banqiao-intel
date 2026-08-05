@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
-import { CompetitorRadar, ModuleGrid, MonthlyAlert } from "@/components/DashboardPanels";
+import { CompetitorTracker } from "@/components/CompetitorTracker";
+import { ModuleGrid, MonthlyAlert } from "@/components/DashboardPanels";
 import { CogsPanel, GeoPanel, KpiStrip } from "@/components/InsightPanels";
 import { merchant } from "@/data/merchant";
 
@@ -15,15 +16,15 @@ export default function DashboardPage() {
       <main className="dashboard">
         <section className="dash-hero">
           <div>
-            <p className="eyebrow">訂閱制營運情報 · 預覽</p>
+            <p className="eyebrow">訂閱制營運情報 · 競品追蹤核心</p>
             <h1>{merchant.fullName}</h1>
             <p className="dash-address" style={{ color: "rgba(255,250,243,0.78)" }}>
               {merchant.address}
             </p>
             <p className="dash-tags">
-              <span>{merchant.area}</span>
-              <span>{merchant.priceBand}</span>
-              <span>外送平台已於 {merchant.exitedDelivery} 退出</span>
+              <span>自行新增最多 10 筆競品</span>
+              <span>關鍵字外接公開網調查</span>
+              <span>超過 24 小時自動再查</span>
             </p>
           </div>
           <aside className="dash-hero__aside">
@@ -32,12 +33,12 @@ export default function DashboardPage() {
               NT${merchant.monthlyPrice}
               <span>/月</span>
             </p>
-            <p>目標：讓每一次更新都對得到淨利或成本下降。</p>
+            <p>核心價值：你指定要盯的店／品，系統持續幫你查。</p>
           </aside>
         </section>
 
+        <CompetitorTracker />
         <MonthlyAlert />
-        <CompetitorRadar />
         <ModuleGrid />
         <CogsPanel />
         <GeoPanel />
@@ -45,9 +46,9 @@ export default function DashboardPage() {
 
         <section id="subscribe-bar" className="subscribe-bar">
           <div>
-            <h2>正式訂閱後，此頁改為每月自動刷新</h2>
+            <h2>正式訂閱後可接雲端排程爬蟲（真正每天自動跑）</h2>
             <p>
-              基礎監控自動跑；神秘客與人工情報採集完成後回填，並從訂閱費中分潤給資料貢獻者。
+              目前已可在瀏覽器新增競品並外接公開網調查；若要「電腦關機也每天固定爬」，需外掛排程後端。
             </p>
           </div>
           <Link className="btn btn-primary" href="/#subscribe">

@@ -61,8 +61,8 @@ export default function HomePage() {
           </div>
           <div className="why-grid">
             <article>
-              <h3>專店專頁</h3>
-              <p>不是通用產業文。抬頭就是 {merchant.fullName}，地址、價帶、競品都對準這一間。</p>
+              <h3>你指定、它來盯</h3>
+              <p>最多 10 筆同性質競品／品項，輸入關鍵字即可外接公開網調查，超過 24 小時自動再查。</p>
             </article>
             <article>
               <h3>小錢可回本</h3>

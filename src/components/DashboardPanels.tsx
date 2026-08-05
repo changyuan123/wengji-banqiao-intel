@@ -1,4 +1,4 @@
-import { competitors, modules, monthlyBrief } from "@/data/merchant";
+import { modules, monthlyBrief } from "@/data/merchant";
 
 export function MonthlyAlert() {
   return (
@@ -25,32 +25,6 @@ export function MonthlyAlert() {
           </li>
         ))}
       </ol>
-    </section>
-  );
-}
-
-export function CompetitorRadar() {
-  return (
-    <section className="panel">
-      <div className="panel__head">
-        <h3>競品雷達（1.5 km）</h3>
-        <span className="pill">每周更新</span>
-      </div>
-      <div className="competitor-grid">
-        {competitors.map((c) => (
-          <article key={c.name} className="competitor-card">
-            <h4>{c.name}</h4>
-            <p className="muted">{c.address}</p>
-            <p className="price">{c.price}</p>
-            <p>{c.threat}</p>
-            <p className="move">
-              <strong>本月動態：</strong>
-              {c.moveThisMonth}
-            </p>
-            <span className="score">公開評分 {c.score}</span>
-          </article>
-        ))}
-      </div>
     </section>
   );
 }
