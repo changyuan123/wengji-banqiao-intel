@@ -101,11 +101,11 @@ export const kpis = [
 export const modules = [
   {
     id: "radar",
-    title: "競品／商品追蹤（核心）",
+    title: "精準找店 × 核驗情報（核心）",
     cadence: "每日可更新",
     status: "優先執行",
-    blurb: "店主自行新增最多 10 筆同性質競品或品項，輸入關鍵字後外接公開網調查，並可每日自動再查。",
-    preview: "例：鍋太爽、辣四方、錢昇——你加什麼，系統就盯什麼。",
+    blurb: "搜店名即可釘選分店（同音也能對），自動產出現況；價格／評分／優惠一律待店主核驗後才算數。",
+    preview: "模組鑰：shop.pin / price.radar / rating.pulse / promo.watch / threat.brief",
   },
   {
     id: "takeout",

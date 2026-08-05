@@ -61,8 +61,8 @@ export default function HomePage() {
           </div>
           <div className="why-grid">
             <article>
-              <h3>你指定、它來盯</h3>
-              <p>最多 10 筆同性質競品／品項，輸入關鍵字即可外接公開網調查，超過 24 小時自動再查。</p>
+              <h3>釘對店、你核驗</h3>
+              <p>搜店名精準鎖定分店（不必翻一長串）；系統自動草擬現況，網上每一條都要你點過才算可信。</p>
             </article>
             <article>
               <h3>小錢可回本</h3>

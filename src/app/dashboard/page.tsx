@@ -16,15 +16,15 @@ export default function DashboardPage() {
       <main className="dashboard">
         <section className="dash-hero">
           <div>
-            <p className="eyebrow">訂閱制營運情報 · 競品追蹤核心</p>
+            <p className="eyebrow">訂閱制營運情報 · 精準找店核驗核心</p>
             <h1>{merchant.fullName}</h1>
             <p className="dash-address" style={{ color: "rgba(255,250,243,0.78)" }}>
               {merchant.address}
             </p>
             <p className="dash-tags">
-              <span>自行新增最多 10 筆競品</span>
-              <span>關鍵字外接公開網調查</span>
-              <span>超過 24 小時自動再查</span>
+              <span>店名精準釘選（同音也能對）</span>
+              <span>自動產出現況情報</span>
+              <span>網上資訊一律店主核驗</span>
             </p>
           </div>
           <aside className="dash-hero__aside">
@@ -33,7 +33,7 @@ export default function DashboardPage() {
               NT${merchant.monthlyPrice}
               <span>/月</span>
             </p>
-            <p>核心價值：你指定要盯的店／品，系統持續幫你查。</p>
+            <p>核心價值：幫你釘對店、草擬現況；可信與否，由你逐條核驗。</p>
           </aside>
         </section>
 
@@ -46,9 +46,9 @@ export default function DashboardPage() {
 
         <section id="subscribe-bar" className="subscribe-bar">
           <div>
-            <h2>正式訂閱後可接雲端排程爬蟲（真正每天自動跑）</h2>
+            <h2>重爬與建置一律上雲（本機文書機不扛）</h2>
             <p>
-              目前已可在瀏覽器新增競品並外接公開網調查；若要「電腦關機也每天固定爬」，需外掛排程後端。
+              儀表板只做精準釘選＋輕量草稿＋店主核驗。公開網重爬、Next 建置、部署皆走 GitHub Actions／Codespaces／Pages，不依賴你的電腦開機。
             </p>
           </div>
           <Link className="btn btn-primary" href="/#subscribe">
